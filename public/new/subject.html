@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengo-Hub Subject</title>
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- When subjects, it lists all the subjects learnt at that level/ class, when one clicks the subject, it opens new tab with subject name on top and in middle position of page. then also topics listed  below and when one clicks topic, it brings a document or image or video of that topic but while having also sub topics of that topic.  we will also put a section for past papers of subject which comes also after clicking Subjects. -->
+
+<body class="subject-page">
+    <header class="subject-header">
+        <div class="subject-topbar">
+            <h1 id="subject-title">Subject</h1>
+        </div>
+        <p id="subject-tagline">Topics, resources and past papers for the selected subject.</p>
+    </header>
+    <main class="subject-shell">
+        <aside class="subject-sidebar">
+            <div class="subject-section">
+                <h2>Topics</h2>
+                <ul id="subject-topic-list" class="topic-list"></ul>
+            </div>
+            <div class="subject-section">
+                <h2>Past papers</h2>
+                <ul id="subject-past-papers" class="topic-list"></ul>
+            </div>
+        </aside>
+        <article class="subject-detail">
+            <div id="topic-detail" class="subject-resource-card">
+                <h2>Select a topic to view the learning resource.</h2>
+                <p>Topic details, videos or documents will appear here.</p>
+            </div>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,15 @@
+Mathematics - Algebra Notes
+
+1. Algebra is the branch of mathematics that uses symbols and letters to represent numbers and quantities.
+2. Important topics:
+   - Expressions
+   - Equations
+   - Inequalities
+   - Factoring
+   - Functions
+3. Example problem:
+   Solve 2x + 5 = 17
+   Answer: x = 6
+4. Practice:
+   - Simplify 3(x + 4) - 2x
+   - Solve x^2 - 5x + 6 = 0

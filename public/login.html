@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengo-Hub | Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <img src="mengo badge.jpg" alt="Mengo logo" class="login-logo">
+                <h1>Mengo-Hub</h1>
+                <p>Secure Login</p>
+            </div>
+
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <!--Role-->
+                <div class="form-group">
+                    <div class="role-radio">
+                        <label>
+                            <input type="radio" name="role" value="student" required> Student
+                        </label>
+                        <label>
+                            <input type="radio" name="role" value="teacher"> Teacher
+                        </label>
+                    </div>                    
+                    <small style="display: block; margin-top: 5px; color: #666; font-size: 12px;"> Feedback after.
+                    </small>                
+                </div>    
+
+                <!-- Username -->
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        placeholder="Enter your username" 
+                        required 
+                        autocomplete="off">
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Enter your password" 
+                        required 
+                        autocomplete="off">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary btn-full">
+                    <span id="btnText">Login</span>
+                    <span id="spinner" class="spinner hidden"></span>
+                </button>
+
+                <p class="login-note">Demo credentials</p>
+                <p class="login-note">Please leave feedback after</p>
+            </form>
+
+            <!-- Notification -->
+            <div id="notification" class="notification hidden"></div>
+
+            <!-- Back to Home -->
+            <a href="index.html" class="btn btn-text btn-full">Back to Home</a>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengo-Hub | Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="admin-panel">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-left">
+                <div class="logo-circle small">A</div>
+                <div>
+                    <h1>Admin Panel</h1>
+                    <p>Mengo-Hub System Administration</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-text" onclick="logout()">Logout</button>
+            </div>
+        </header>
+
+        <!-- Main Layout -->
+        <div class="dashboard-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Admin Menu -->
+                <nav class="menu">
+                    <button class="menu-item active" data-view="overview">
+                        <span>📊</span> Overview
+                    </button>
+                    <button class="menu-item" data-view="users">
+                        <span>👥</span> User Accounts
+                    </button>
+                    <button class="menu-item" data-view="account-check">
+                        <span>🧾</span> Account Check
+                    </button>
+                    <button class="menu-item" data-view="payments">
+                        <span>💰</span> Payments
+                    </button>
+                    <button class="menu-item" data-view="feedback">
+                        <span>✉️</span> Feedback
+                    </button>
+                    <button class="menu-item" data-view="certificates">
+                        <span>📜</span> Certificates
+                    </button>
+                    <button class="menu-item" data-view="logs">
+                        <span>📋</span> Activity Logs
+                    </button>
+                    <button class="menu-item" data-view="system-health">
+                        <span>⚙️</span> System Health
+                    </button>
+                    <button class="menu-item" data-view="audit">
+                        <span>🔎</span> Security Audit
+                    </button>
+                    <button class="menu-item" data-view="add-account">
+                        <span>➕</span> Add Account
+                    </button>
+                    <button class="menu-item" data-view="media">
+                        <span>🖼️</span> Media Manager
+                    </button>
+                    <button class="menu-item" data-view="refresh">
+                        <span>♻️</span> System Refresh
+                    </button>
+                    <button class="menu-item" data-view="recovery">
+                        <span>🔧</span> Recovery Tools
+                    </button>
+                    
+                    <button class="menu-item" data-view="feature-controls">
+                        <span>🎚️</span> Feature Controls
+                    </button>
+
+                    <!-- Email Management -->
+                    <button class="menu-item" data-view="email-management">
+                        <span>📧</span> Email Management
+                    </button>
+
+                    <!-- AI Configuration -->
+                    <button class="menu-item" data-view="ai-configuration">
+                        <span>🤖</span> AI Configuration
+                    </button>
+
+                    <!-- Certificate Manager -->
+                    <button class="menu-item" data-view="certificate-manager">
+                        <span>📋</span> Certificate Manager
+                    </button>
+
+                    <!-- System Logs -->
+                    <button class="menu-item" data-view="system-logs">
+                        <span>📝</span> System Logs
+                    </button>
+
+                    <!-- N8N Webhooks -->
+                    <button class="menu-item" data-view="n8n-webhooks">
+                        <span>🔗</span> N8N Webhooks
+                    </button>
+
+                    <!-- 3D Models -->
+                    <button class="menu-item" data-view="3d-models">
+                        <span>🎯</span> 3D Models Manager
+                    </button>
+
+                    <!-- Audio Beats -->
+                    <button class="menu-item" data-view="audio-beats">
+                        <span>🎵</span> Binaural Beats
+                    </button>
+                </nav>
+            </aside>
+
+            
+            <section id="about-mss" class="card">
+                <h2>About Mengo Senior School</h2>
+                <p><strong>Founded:</strong> 1895 — Uganda's oldest secondary school.</p>
+                <p><strong>Core values:</strong> Fearing God; Respect for persons & property; Integrity.</p>
+                <p><strong>Mission:</strong> To provide quality, holistic education that prepares students for service in church, state, and society.</p>
+                <p><a href="https://mengoss.sc.ug" target="_blank">mengoss.sc.ug</a></p>
+            </section>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <div id="content-area">
+                    <!-- Overview will be loaded here -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

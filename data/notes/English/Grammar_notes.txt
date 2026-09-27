@@ -1,0 +1,16 @@
+English - Grammar Notes
+
+1. Sentence structure: Subject + Verb + Object.
+2. Common parts of speech:
+   - Noun
+   - Pronoun
+   - Verb
+   - Adjective
+   - Adverb
+   - Preposition
+   - Conjunction
+3. Example:
+   The student (noun) reads (verb) a book (object).
+4. Practice:
+   - Identify the nouns and verbs in each sentence.
+   - Rewrite the sentence using an adverb.

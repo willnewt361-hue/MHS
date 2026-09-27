@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengo-Hub | Teacher Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="dashboard-header">
+            <div class="header-left">
+                <div class="logo-circle small">M</div>
+                <div>
+                    <h1>Teacher Consultation</h1>
+                    <p id="teacherName">Loading...</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-text" onclick="window.location.href='dashboard.html'">Back</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="view-header">
+                <div>
+                    <h2 id="teacherTitle">Teacher Chat</h2>
+                    <p id="teacherDetails"></p>
+                </div>
+            </div>
+            <div class="card" id="chatCard">
+                <div id="chatHistory" class="chat-history"></div>
+                <div class="form-group">
+                    <label for="consultMessage">Your Question</label>
+                    <textarea id="consultMessage" rows="4" class="wide-textarea" placeholder="Type your request or question here..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="consultFile" class="file-label">📎 Attach file</label>
+                    <input type="file" id="consultFile" class="file-input" accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg">
+                </div>
+                <button class="btn btn-primary btn-full" onclick="sendChatMessage()">Send to Teacher</button>
+                <p class="login-note note-small">Teacher replies are kept in the page chat history for demo.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="teacher-chat.js"></script>
+</body>
+</html>

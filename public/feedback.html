@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengo-Hub | Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="feedback-page">
+        <div class="feedback-card">
+            <div class="feedback-header">
+                <h1>Send Feedback</h1>
+                <p>Tell us how we can improve the Mengo-Hub experience.</p>
+            </div>
+            <form id="feedbackForm" onsubmit="submitFeedback(event)">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required autocomplete="off" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="off" value="willnewtgangster@gmail.com" placeholder="willnewtgangster@gmail.com" />
+                    <p class="login-note">If a different email is provided, feedback will also be saved in the system for admin review.</p>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="20" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Submit Feedback</button>
+            </form>
+            <div id="feedbackNotification" class="notification hidden"></div>
+            <button class="btn btn-text btn-full" onclick="window.location.href='index.html'">Back to Home</button>
+        </div>
+    </div>
+
+    <script src="feedback.js"></script>
+</body>
+</html>

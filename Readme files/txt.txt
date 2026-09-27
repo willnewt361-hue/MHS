@@ -1,0 +1,39 @@
+btw bro, did u add a feature that awards a badge to students and teachers and certific ates(optional). i want to ask on how the basic features are separated from premium, i would like another user account for the principle and deputy principle with a part for showing progress analytics and students attendance, performance and the rest. plus i would like other parts(deans) where they are capable of seeing students of the 2 years ie Dean lower for S1 and s2, Dean middle school for s4 and s6, dean upper xul for s5 n s6 
+
+bro credentials are still saying invalid yet i put in the correct ones.btw i would like that if any admin or i is taken to the certificate-installer, as soon as the ui that shows available  certificate one has is admin, he is taken to their admin panel straight away coz i am redirected to the certificate installer page yet i even have the admin certificate, plus on admin panel, it fails to load the user acc,  and other stuff on that panel plus on student dashboard, it does not load the timetables for respective streams yet i have them for respective classes in the data/timetables/ folder .  
+bro note that what i had told you --> 
+btw the subjects learnt are:
+Senior 1 and 2(Biology(B), chemistry(C), english(E), kiswahili(K), mathematics(M), physics(P), entrepreneurship(Ent), physical Education(PE), Geography(G), Christian Religious Education(CRE), History(H) ) 11 subjects plus one of the optionals which are(Literature, Technology and Design(TD or T&D), Art and Design,German, Food and Nutrition(FN), Information and Communication Technology(ICT), Chinese, Performing Arts(Music class), agriculture, French)  total subjects  in these  classes ARE 12
+Senior 3 and 4(Biology(B), chemistry, english, mathematics, physics, Geography, History ) 7 subjects(they ARE the CORE SUBJECTS one  cannot drop) plus one of the optionals which are(Literature, Technology and Design(TD or T&D), Art and Design,German, Food and Nutrition(FN), Information and Communication Technology(ICT), Chinese, Performing Arts(Music class), PE,entrepreneurship,CRE,kiswahili,agriculture(A),French(F))  total subjects  in these  classes ARE 9   
+   NB: the optionals Are grouped into; vocationals(Ent, TD, agriculture, PE, FN, Art and Design, ICT, Performing Arts)
+                                       languages (CRE, Literature, German, Chinese, French, kiswahili)
+therefore, one cannot choose A subject that falls in the same category AND they shoud choose one from each category to make 9 subjects in class s 3 which they continue with to s 4 but in form one the case is different AS i showed u because for them they choose one.  
+Senior 5 AND 6(BCM/ICT, PCB, PMT&D/ICT, HEL, HED, HAC/ICT, PCM/ICT, BAG, HEG, MEEnt/ICT, PEM/ICT , u can add some others u know and aLSO  leave 6 gAPS for other subjects i will put in after i make research.) with their optionals(submath, ICT)they do 4 subjects but i will Adjust since i k less about the  classes.{if i put A  "/" in the subjects, it means thats the only optional for that subject combination, and dont consider it Again because i will have mentioned it And for those that dont have, consider that subject combination to have possibility of taking both optionals .}
+
+streams and their subjects
+s1 to s4(TD - Violet(V),North(N), G - Gold(G),South(S),  ICT - Central(C),Maroon(M),  FN - West(W),  Performing Arts - Purple(P),  Art and Design - East(E))  NB:in s3 and s4, some slight changes are made but i will tell u. 
+ other streams ik but dont know the subject they do (Diamond).
+
+ lets use student id as index number please and follow this rule i told you last time---> note that each student has there own class and in that class, he has his own stream in that class, therefore the ID should do the work now of identifying ones class and stream. ie ID -"25V/MN/24" means that 25 was my allocated number, V means am in stream Violet and M means am male and N means my house is Nsubuga and 24 means i was registered in 2024 and therefore my class is senior 3 because my current year is 2026 and its (2026-2024) + 1(for 2024 yr inclusive)
+if a girl, it is may be 32N/FL/23 means that was allocated number 32, her stream is North, She is Female, her house is luboyera and she is in senior 4 in 2026(current yr.). Cosider formula, vs/gh/yr {v is the allocated number and doesnt exceed 150 ,s is the stream of person and is according to those i gave you ,g is F or M, }     v,value cannot exceed 150, s for the stream,g for gender, h for house, yr for year of registeration but c onsidering last 2 digits of that year, and is used to determine the class of student. if one is in s1 according to formula, after 7 years, their account info and other stuff is summarised n stored in a new folder that is protected and encrypted with password and the acc is deleted from system.
+
+the houses are Nsubuga(N), Musisi Bunjo(M), Busuulwa(B), George(G), Armitage(A),Sempa(S), Luboyera(L), Kennedy(K) only.
+btw there are json files for timetables of respective streams and so do not add streams but rather those that i gave u and please dont also alter the index numbers coz that formula i gave u is the exact one to use 
+btw, users in the populate.py are the ones working and those in import csv are not working.  
+
+
+
+
+
+btw, i would like system to be able to allow word docx, and pdf(i had added a pdf file of the constitution of UG for History, i would like folders having classes s1 to s6 coz i will put notes of respective classes and other people who are not in that class should only see notes of their class.) plus mp4. coz i want to add the notes with more content instead, 3d diagrams (can be interacted with just like ones of human biodigital website) part .dont forget the production ready environment on WSL please after test that everything works ie all dashboards with no errors, backend of system. bro btw, i dont want ai like logic, i would like that u hve an ai similar engine that can run on its own(can be rule based ai like but code and giving output just like an ai )
+bro, i hope i can be able to import n8n workflows for the system and make a real one that is a chatbot with ai and others u would like.
+dont forget that system reports should be made after everymonth showing system stats, performance, threats, details of activity and others a system report should have. i hope all the premium features work as well as everything in system without error.
+btw how do i get my super admin token and how will the other admins get their admin token plus overall access the system panels respectively without disturbances ie certificate stuff even if one has it and other issues. 
+i also hope the system can support over 8k learners and about 300 staff. btw bro, what if i added some other features, how can i add them to system if at all it is online and in use, Create database migrations if neccessary, Add routes to `flask_app.py`, Update frontend JavaScript files, update documentation after.
+how do i get my true smtp credentials
+
+
+
+
+Please cross check everything to verify that everything works.
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengo-Hub Consult</title>
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="consult-page">
+    <header class="consult-header">
+        <div>
+            <a class="link-button" href="dashoard.html">Back to dashboard</a>
+            <h1>Teacher Consult</h1>
+            <p>Search for teachers by name, class or subject and start a consult session.</p>
+        </div>
+    </header>
+    <main class="consult-shell">
+        <aside class="consult-sidebar">
+            <div class="search-box">
+                <label for="teacher-search-input">Search teachers</label>
+                <input id="teacher-search-input" type="search" placeholder="Name or subject" />
+            </div>
+            <div id="teacher-list" class="teacher-list"></div>
+        </aside>
+        <section class="consult-chat-panel">
+            <div id="consult-chat-header" class="consult-chat-header">Select a teacher to open chat</div>
+            <div id="consult-chat-body" class="consult-chat-body">
+                <div class="consult-empty">Choose a teacher from the left and send a message.</div>
+            </div>
+            <form id="consult-chat-form" class="consult-chat-form">
+                <textarea id="consult-message" placeholder="Write your message..." rows="4"></textarea>
+                <label class="attachment-label">Attach document
+                    <input id="consult-file" type="file" />
+                </label>
+                <button type="submit" class="hero-button">Send Message</button>
+            </form>
+            <div id="notification" class="notification-banner hidden"></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

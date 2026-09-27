@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Certificate Test Page</h1>
+    <div id="status"></div>
+    <button onclick="testCertificates()">Test Certificates</button>
+    <button onclick="clearCertificates()">Clear All Certificates</button>
+    <button onclick="goToMain()">Go to Main Site</button>
+
+    <script>
+        const DB_NAME = 'MengoHubCertificates';
+        const CERT_STORE = 'certificates';
+
+        function openDB() {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open(DB_NAME, 1);
+                request.onerror = () => reject(request.error);
+                request.onsuccess = () => resolve(request.result);
+                request.onupgradeneeded = (event) => {
+                    const db = event.target.result;
+                    if (!db.objectStoreNames.contains(CERT_STORE)) {
+                        db.createObjectStore(CERT_STORE, { keyPath: 'serialNumber' });
+                    }
+                };
+            });
+        }
+
+        async function getAllCertificates() {
+            const db = await openDB();
+            const transaction = db.transaction([CERT_STORE], 'readonly');
+            const store = transaction.objectStore(CERT_STORE);
+            return new Promise((resolve, reject) => {
+                const request = store.getAll();
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+        }
+
+        async function clearAllCertificates() {
+            const db = await openDB();
+            const transaction = db.transaction([CERT_STORE], 'readwrite');
+            const store = transaction.objectStore(CERT_STORE);
+            await new Promise((resolve, reject) => {
+                const request = store.clear();
+                request.onsuccess = () => resolve();
+                request.onerror = () => reject(request.error);
+            });
+            testCertificates();
+        }
+
+        async function testCertificates() {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = '<div class="status info">Checking certificates...</div>';
+
+            try {
+                const certificates = await getAllCertificates();
+                const now = new Date();
+
+                if (certificates.length === 0) {
+                    statusDiv.innerHTML = '<div class="status error">❌ No certificates found!</div>';
+                    return;
+                }
+
+                let html = `<div class="status success">✅ Found ${certificates.length} certificate(s):</div>`;
+
+                certificates.forEach((cert, i) => {
+                    const expiry = new Date(cert.validity.notAfter);
+                    const isExpired = now > expiry;
+                    const daysLeft = Math.ceil((expiry - now) / (1000 * 60 * 60 * 24));
+
+                    html += `
+                        <div class="status ${isExpired ? 'error' : 'success'}">
+                            <strong>Certificate ${i+1}:</strong><br>
+                            Type: ${cert.extensions?.certificateType || 'UNKNOWN'}<br>
+                            Serial: ${cert.serialNumber}<br>
+                            Expires: ${expiry.toLocaleDateString()}<br>
+                            Status: ${isExpired ? '❌ EXPIRED' : `✅ VALID (${daysLeft} days left)`}
+                        </div>
+                    `;
+                });
+
+                statusDiv.innerHTML = html;
+
+            } catch (error) {
+                statusDiv.innerHTML = `<div class="status error">❌ Error: ${error.message}</div>`;
+            }
+        }
+
+        function goToMain() {
+            window.location.href = 'index.html';
+        }
+
+        // Auto-test on load
+        window.addEventListener('load', testCertificates);
+    </script>
+</body>
+</html>

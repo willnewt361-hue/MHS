@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengo-Hub | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-left">
+                <div class="logo-circle small">M</div>
+                <div>
+                    <h1>Mengo-Hub</h1>
+                    <p id="userGreeting">Welcome</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-text" onclick="logout()">Logout</button>
+            </div>
+        </header>
+
+        <!-- Main Layout -->
+        <div class="dashboard-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Profile Card -->
+                <div class="profile-card">
+                    <div class="profile-avatar" id="userPhoto">?</div>
+                    <h3 id="userFullName">User</h3>
+                    <p id="userRole">Role</p>
+                    <p id="userId">ID: --</p>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="menu">
+                    <button class="menu-item active" data-view="home">
+                        <span>🏠</span> Home
+                    </button>
+                    <button class="menu-item" data-view="teachers">
+                        <span>👩‍🏫</span> Teachers
+                    </button>
+                    <button class="menu-item" data-view="assignments">
+                        <span>📚</span> Assignments
+                    </button>
+                    <button class="menu-item" data-view="updates">
+                        <span>📬</span> Updates
+                    </button>
+                    <button class="menu-item" data-view="timetable">
+                        <span>📅</span> Timetable
+                    </button>
+                    <button class="menu-item" data-view="subjects">
+                        <span>📖</span> Subjects
+                    </button>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <div id="notification" class="notification hidden"></div>
+                <div id="content"></div>
+            </main>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

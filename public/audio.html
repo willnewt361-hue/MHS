@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengo-Hub | Audio panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+    <body>
+        <div class="audio-study-section">
+            <h2>🎵 Audio Study Aids</h2>
+  
+            <div class="preset-buttons">
+                <button onclick="generateBeat(10, 30)">Relax (30 min)</button>
+                <button onclick="generateBeat(20, 25)">Focus (25 min)</button>
+                <button onclick="generateBeat(40, 20)">Deep Focus (20 min)</button>
+                <button onclick="generateBeat(4, 60)">Sleep (60 min)</button>
+            </div>
+
+            <div class="custom-generator">
+                <label>Frequency (Hz):</label>
+                <input type="number" id="frequency" min="1" max="100" value="10">
+    
+                <label>Duration (min):</label>
+                <input type="number" id="duration" min="5" max="120" value="30">
+    
+                <button onclick="customBeat()">Generate Custom Beat</button>
+            </div>
+
+            <div id="player-container" style="display:none;">
+                <audio id="audio-player" controls style="width: 100%; margin-top: 10px;">
+                    Your browser does not support the audio element.
+                </audio>
+                <button onclick="downloadAudio()">Download Audio</button>
+            </div>
+
+            <div id="loading-spinner" style="display:none;">
+                <p>⏳ Generating binaural beats...</p>
+            </div>
+        </div>
+        
+<script>
+    const studentToken = localStorage.getItem('mengo_token');
+
+    async function generateBeat(frequency, duration) {
+        document.getElementById('loading-spinner').style.display = 'block';
+  
+    try {
+        const response = await fetch('/api/premium/audio/generate', {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${studentToken}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            student_id: localStorage.getItem('student_id'),
+            beat_frequency: frequency,
+            duration_minutes: duration,
+            base_frequency: 200
+        })
+    });
+    
+    const data = await response.json();
+    
+    if (data.success) {
+      const player = document.getElementById('audio-player');
+      player.src = data.audio_url;
+      document.getElementById('player-container').style.display = 'block';
+      document.getElementById('loading-spinner').style.display = 'none';
+      
+      showNotification(`✅ ${frequency}Hz beat generated for ${duration} minutes`);
+    } else {
+      showNotification('❌ Failed to generate audio');
+    }
+  } catch (e) {
+    console.error(e);
+    showNotification('Error generating audio');
+  } finally {
+    document.getElementById('loading-spinner').style.display = 'none';
+     }
+    }
+
+    function customBeat() {
+        const freq = parseInt(document.getElementById('frequency').value);
+        const dur = parseInt(document.getElementById('duration').value);
+    if (freq < 1 || freq > 100) {
+        showNotification('Frequency must be between 1-100 Hz');
+    return;
+    }
+    if (dur < 5 || dur > 120) {
+        showNotification('Duration must be between 5-120 minutes');
+    return;
+    }
+  
+      generateBeat(freq, dur);
+    }
+
+    function downloadAudio() {
+        const audioSrc = document.getElementById('audio-player').src;
+        const link = document.createElement('a');
+        link.href = audioSrc;
+        link.download = 'binaural-beats.wav';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    function showNotification(msg) {
+      // Implement your notification system
+      alert(msg);
+    }
+    </script>
+
+     
+    </body>
+</html>

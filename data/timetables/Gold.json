@@ -1,0 +1,7 @@
+[
+  {"time":"8:00 - 9:00","monday":"English","tuesday":"Mathematics","wednesday":"Biology","thursday":"Physics","friday":"CRE"},
+  {"time":"9:10 - 10:10","monday":"Mathematics","tuesday":"Chemistry","wednesday":"History","thursday":"English","friday":"Geography"},
+  {"time":"10:20 - 11:20","monday":"Physics","tuesday":"Mathematics","wednesday":"English","thursday":"Biology","friday":"Kiswahili"},
+  {"time":"11:30 - 12:30","monday":"Chemistry","tuesday":"History","wednesday":"Geography","thursday":"Mathematics","friday":"CRE"},
+  {"time":"1:30 - 2:30","monday":"Physical Education","tuesday":"English","wednesday":"Mathematics","thursday":"Biology","friday":"Computer Studies"}
+]

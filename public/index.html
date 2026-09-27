@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengo-Hub | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <div class="logo-section">
+                <div class="logo-circle">M</div>
+                <h1>Mengo-Hub</h1>
+                <p class="subtitle">School Management Portal</p>
+            </div>
+            
+            <div class="hero-text">
+                <h2>Welcome to Mengo Secondary School Hub</h2>
+                <p>Access your dashboard, assignments, timetable, and communicate with teachers - all in one place.</p>
+                
+                <div class="button-group">
+                    <button class="btn btn-primary" onclick="showRoleModal()">Get Started</button>
+                    <a href="login.html" class="btn btn-secondary">Go to Login</a>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-icon">📚</span>
+                    <h3>Assignments</h3>
+                    <p>View and submit assignments</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">📅</span>
+                    <h3>Timetable</h3>
+                    <p>Check class schedule</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">💬</span>
+                    <h3>Chat Teachers</h3>
+                    <p>Consult with teachers</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">📝</span>
+                    <h3>Updates</h3>
+                    <p>School news & updates</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer">
+        <p>Have feedback? <a href="feedback.html">Send us feedback</a></p>
+    </footer>
+
+    <!-- Role Selection Modal -->
+    <div id="roleModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Select Your Role</h2>
+            <p>Choose whether you are a student or teacher</p>
+            <div class="role-buttons">
+                <button class="btn btn-role" onclick="goToLogin('student')">
+                    <span class="role-icon">👨‍🎓</span> Student
+                </button>
+                <button class="btn btn-role" onclick="goToLogin('teacher')">
+                    <span class="role-icon">👩‍🏫</span> Teacher
+                </button>
+            </div>
+            <button class="btn btn-text" onclick="closeRoleModal()">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        // Certificate-based access control using IndexedDB
+        const DB_NAME = 'MengoHubCertificates';
+        const CERT_STORE = 'certificates';
+
+        function openDB() {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open(DB_NAME, 1);
+                request.onerror = () => reject(request.error);
+                request.onsuccess = () => resolve(request.result);
+                request.onupgradeneeded = (event) => {
+                    const db = event.target.result;
+                    if (!db.objectStoreNames.contains(CERT_STORE)) {
+                        db.createObjectStore(CERT_STORE, { keyPath: 'serialNumber' });
+                    }
+                };
+            });
+        }
+
+        async function getAllCertificates() {
+            const db = await openDB();
+            const transaction = db.transaction([CERT_STORE], 'readonly');
+            const store = transaction.objectStore(CERT_STORE);
+            return new Promise((resolve, reject) => {
+                const request = store.getAll();
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+        }
+
+        async function checkCertificateAccess() {
+            try {
+                const certificates = await getAllCertificates();
+                const now = new Date();
+
+                if (certificates.length === 0) {
+                    // NO CERTIFICATES AT ALL - Redirect to certificate installation
+                    window.location.href = 'install.html';
+                    return;
+                }
+
+                // Look for valid access certificate
+                const accessCert = certificates.find(cert =>
+                    cert.extensions.certificateType === 'access' &&
+                    new Date(cert.validity.notAfter) > now
+                );
+
+                if (!accessCert) {
+                    // No valid access certificate - redirect to install
+                    window.location.href = 'install.html';
+                    return;
+                }
+
+                // Access certificate is valid - allow site access
+                console.log('✅ Valid access certificate found - site access granted');
+
+            } catch (error) {
+                console.error('Error checking certificate access:', error);
+                // On error, redirect to install page
+                window.location.href = 'install.html';
+            }
+        }
+
+                // Check for access certificate first
+                const accessCerts = certificates.filter(cert =>
+                    cert.extensions.certificateType === 'access'
+                );
+
+                if (accessCerts.length === 0) {
+                    // NO ACCESS CERTIFICATE - Redirect to installation
+                    window.location.href = 'install.html';
+                    return;
+                }
+
+                // Check if access certificate is expired
+                const now = new Date();
+                const accessCert = accessCerts[0];
+                const accessExpiry = new Date(accessCert.validity.notAfter);
+
+                if (now > accessExpiry) {
+                    // ACCESS CERTIFICATE EXPIRED - Redirect to renewal
+                    window.location.href = 'install.html?renew=true';
+                    return;
+                }
+
+                // Access certificate is valid, now check for higher-level certificates
+                const validCerts = certificates.filter(cert => {
+                    const notAfter = new Date(cert.validity.notAfter);
+                    return now <= notAfter;
+                });
+
+                if (validCerts.length > 0) {
+                    // Sort by issue date (most recent first)
+                    validCerts.sort((a, b) => new Date(b.extensions.issuedDate) - new Date(a.extensions.issuedDate));
+                    const cert = validCerts[0];
+
+                    if (cert.extensions.certificateType === 'admin') {
+                        // ADMIN CERTIFICATE - Direct admin access
+                        window.location.href = 'admin.html';
+                        return;
+                    } else if (cert.extensions.certificateType === 'paid_user') {
+                        // PAID USER CERTIFICATE - Direct dashboard access
+                        window.location.href = 'dashboard.html';
+                        return;
+                    }
+                }
+
+                // Only access certificate - show home page for login/payment
+                showHomePage();
+
+            } catch (error) {
+                console.error('Certificate check error:', error);
+                // On error, redirect to installation
+                window.location.href = 'install.html';
+            }
+        }
+
+        function showHomePage() {
+            // Certificate is valid, show the normal home page
+            // The existing home page content will be displayed
+        }
+
+        async function clearAllCertificates() {
+            try {
+                const db = await openDB();
+                const transaction = db.transaction([CERT_STORE], 'readwrite');
+                const store = transaction.objectStore(CERT_STORE);
+                const request = store.clear();
+                request.onsuccess = () => {
+                    localStorage.removeItem('mengo_certificate'); // Fallback cleanup
+                };
+            } catch (error) {
+                console.error('Error clearing certificates:', error);
+                localStorage.removeItem('mengo_certificate');
+            }
+        }
+
+        function showRoleModal() {
+            document.getElementById('roleModal').classList.remove('hidden');
+        }
+
+        function closeRoleModal() {
+            document.getElementById('roleModal').classList.add('hidden');
+        }
+
+        function goToLogin(role) {
+            window.location.href = `login.html?role=${role}`;
+        }
+
+        // Check certificate on page load
+        window.addEventListener('load', function() {
+            checkCertificateAccess();
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('roleModal').addEventListener('click', (e) => {
+            if (e.target.id === 'roleModal') closeRoleModal();
+        });
+    </script>
+</body>
+</html>

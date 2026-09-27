@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengo-Hub | Access Certificate Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="installer-container">
+        <div class="installer-card">
+            <div class="installer-header">
+                <img src="mengo badge.jpg" alt="Mengo logo" class="installer-logo">
+                <h1>Mengo-Hub Access Certificate Generator</h1>
+                <p>Generate your access certificate to proceed to login.</p>
+            </div>
+
+            <div class="installer-content">
+                <div class="access-section">
+                    <h3>🔐 Generate Access Certificate</h3>
+                    <p>This certificate allows the browser to open the site and proceed to login.</p>
+                    <form class="certificate-form" onsubmit="generateAccessCertificate(event)">
+                        <div class="form-group">
+                            <label for="userId">User ID:</label>
+                            <input type="text" id="userId" required placeholder="e.g., 25V/MN/24">
+                        </div>
+                        <div class="form-group">
+                            <label for="userType">User Type:</label>
+                            <select id="userType" required>
+                                <option value="student">Student</option>
+                                <option value="teacher">Teacher</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Generate Access Certificate</button>
+                    </form>
+
+                    <div class="certificate-display" id="certificateDisplay" style="display: none;">
+                        <h4>Generated Access Certificate</h4>
+                        <textarea id="certificateJson" readonly rows="10" style="width: 100%; font-family: monospace; font-size: 12px;"></textarea>
+                        <div class="certificate-actions">
+                            <button class="btn btn-secondary" onclick="copyCertificate()">Copy Certificate</button>
+                            <button class="btn btn-primary" onclick="installGeneratedCertificate()">Install Certificate</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="installer-actions">
+                    <button class="btn btn-text" onclick="window.location.href='admin-install.html'">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="install.js"></script>
+</body>
+</html>

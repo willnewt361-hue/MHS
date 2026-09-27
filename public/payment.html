@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengo-Hub | Payment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="payment-page">
+        <div class="payment-container">
+            <div class="payment-header">
+                <img src="mengo badge.jpg" alt="Mengo logo" class="payment-logo">
+                <h1>Mengo-Hub Payment</h1>
+                <p>Complete your payment to access the website</p>
+            </div>
+
+            <div class="payment-card">
+                <h2>Payment Required</h2>
+                <div class="payment-amount">
+                    <span class="amount">UGX 1,000</span>
+                    <span class="description">One-time access fee</span>
+                </div>
+
+                <div class="payment-instructions">
+                    <h3>How to Pay:</h3>
+                    <ol>
+                        <li>Dial <strong>*165#</strong> on your phone</li>
+                        <li>Select <strong>"Send Money"</strong></li>
+                        <li>Enter recipient number: <strong>0757550965</strong></li>
+                        <li>Enter amount: <strong>1000</strong></li>
+                        <li>Enter your PIN and confirm</li>
+                        <li>Note the <strong>Transaction ID</strong> from the confirmation message</li>
+                    </ol>
+                </div>
+
+                <div class="payment-details">
+                    <div class="detail-item">
+                        <strong>Recipient:</strong> Mengo-Hub System
+                    </div>
+                    <div class="detail-item">
+                        <strong>Phone:</strong> 0757550965
+                    </div>
+                    <div class="detail-item">
+                        <strong>Network:</strong> Airtel
+                    </div>
+                    <div class="detail-item">
+                        <strong>Amount:</strong> UGX 1,000
+                    </div>
+                </div>
+
+                <form id="paymentVerificationForm" onsubmit="verifyPayment(event)">
+                    <div class="form-group">
+                        <label for="transactionId">Transaction ID</label>
+                        <input 
+                            type="text" 
+                            id="transactionId" 
+                            name="transactionId" 
+                            placeholder="Enter transaction ID from SMS" 
+                            required 
+                            autocomplete="off">
+                        <small>Check your SMS for the transaction ID</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span id="verifyBtnText">Verify Payment</span>
+                        <span id="verifySpinner" class="spinner hidden"></span>
+                    </button>
+                </form>
+
+                <div class="payment-actions">
+                    <button class="btn btn-text" onclick="goBack()">Back to Login</button>
+                    <button class="btn btn-secondary" onclick="contactSupport()">Contact Support</button>
+                </div>
+
+                <!-- Notification -->
+                <div id="notification" class="notification hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="payment.js"></script>
+</body>
+</html>

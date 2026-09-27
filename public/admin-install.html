@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengo-Hub | Admin Certificate Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="installer-container">
+        <div class="installer-card">
+            <div class="installer-header">
+                <img src="mengo badge.jpg" alt="Mengo logo" class="installer-logo">
+                <h1>Mengo-Hub Admin Certificate Manager</h1>
+                <p>Generate paid or admin certificates and install certificate JSON directly from the browser.</p>
+            </div>
+
+            <div class="installer-content">
+                <div class="certificate-list-section">
+                    <h3>🔍 Installed Certificates</h3>
+                    <p>View certificates currently stored in the browser and their validity.</p>
+                    <div class="certificate-summary" id="certificateSummary"></div>
+                    <div class="certificate-list" id="certificateList"></div>
+                    <button class="btn btn-secondary btn-full" onclick="checkAllCertificates()">
+                        Refresh Certificate Status
+                    </button>
+                </div>
+
+                <div class="divider">
+                    <span>GENERATE CERTIFICATE</span>
+                </div>
+
+                <div class="admin-section">
+                    <h3>🔐 Generate Paid / Admin Certificate</h3>
+                    <p>Use this form to create a browser certificate for a student, teacher, or administrator.</p>
+                    <form class="certificate-form" onsubmit="generateCertificate(event)">
+                        <div class="form-group">
+                            <label for="userId">User ID:</label>
+                            <input type="text" id="userId" required placeholder="e.g., 25V/MN/24">
+                        </div>
+                        <div class="form-group">
+                            <label for="userType">User Type:</label>
+                            <select id="userType" required>
+                                <option value="student">Student</option>
+                                <option value="teacher">Teacher</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="certType">Certificate Type:</label>
+                            <select id="certType" required>
+                                <option value="paid_user">Paid User (Dashboard Login)</option>
+                                <option value="admin">Admin (Full Control)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-full">Generate Certificate</button>
+                    </form>
+
+                    <div class="certificate-display" id="certificateDisplay" style="display: none;">
+                        <h4>Generated Certificate</h4>
+                        <textarea id="certificateJson" readonly rows="10" style="width: 100%; font-family: monospace; font-size: 12px;"></textarea>
+                        <div class="certificate-actions">
+                            <button class="btn btn-secondary" onclick="copyCertificate()">Copy Certificate</button>
+                            <button class="btn btn-primary" onclick="installGeneratedCertificate()">Install Certificate</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider">
+                    <span>PASTE CERTIFICATE</span>
+                </div>
+
+                <div class="paste-section">
+                    <h3>📄 Install Certificate JSON</h3>
+                    <p>Paste the certificate JSON you received and install it directly in the browser.</p>
+                    <textarea id="pasteCertificateJson" rows="10" placeholder="Paste certificate JSON here"></textarea>
+                    <button class="btn btn-secondary btn-full" onclick="installPastedCertificate()">Install Pasted Certificate</button>
+                </div>
+
+                <div class="installer-actions">
+                    <button class="btn btn-text" onclick="goBack()">Back to Home</button>
+                    <button class="btn btn-text" onclick="goToTest()">Test Certificates</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin-installer.js"></script>
+</body>
+</html>

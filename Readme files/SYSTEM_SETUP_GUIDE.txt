@@ -1,0 +1,264 @@
+================================================================================
+                    MENGO HUB SYSTEM SETUP & INFORMATION
+================================================================================
+
+ABOUT MENGO SENIOR SCHOOL (MSS)
+================================================================================
+Mengo Senior School, founded in 1895, is Uganda's oldest secondary school, 
+guided by the core values of Fearing God, respecting persons and property, 
+and integrity, with the mission to provide quality, holistic education that 
+prepares students for service in church, state, and society.
+
+CORE VALUES
+================================================================================
+1. Fearing God – Inspiring students to live spiritually disciplined and 
+   morally upright lives
+
+2. Respect for Persons and Property – Encouraging students to value themselves, 
+   others, and communal assets
+
+3. Integrity – Promoting honesty, accountability, and ethical conduct in all actions
+
+MISSION AND AIM
+================================================================================
+The mission of Mengo Senior School is to provide quality education through 
+practical skills, teamwork, self-reliance, and nurturing God-fearing individuals.
+
+This mission ensures a balance between academic excellence and moral development. 
+The overarching aim of the school is to produce competent human resources 
+capable of serving the Church, state, and global community.
+
+The school targets holistic development by integrating academic subjects, 
+vocational training, technical education, and extracurricular activities to 
+prepare students for real-world challenges.
+
+BRIEF HISTORY
+================================================================================
+
+Foundation (1895):
+The school was established by the Church Missionary Society (CMS) as an 
+elementary mixed school called Kayanja. Miss Chadwick, a missionary, began by 
+teaching reading, writing, and prayers to local youth, mainly children of 
+missionaries' houseboys.
+
+Early Development:
+As enrollment grew, students were housed temporarily on Namirembe Hill, 
+graciously provided by Sir Apollo Kaggwa, the Katikkiro of Buganda. The 
+potential of formal education was recognized as a way to prepare youth for 
+both secular and religious leadership.
+
+Establishment of Mengo High School (1904-1905):
+Formal structures comprising classrooms and dormitories were built. The school 
+was officially named Mengo High School to serve as a boarding institution for 
+sons of chiefs and future leaders.
+
+Expansion and Modernization:
+Due to increasing demand, the school expanded through the early 20th century, 
+separating junior and senior sections and evolving into a comprehensive mixed 
+day school offering general academics, technical, vocational, and business 
+subjects.
+
+LEADERSHIP STRUCTURE
+================================================================================
+
+HEAD TEACHER
+---
+Dr. Nantagya Grace Ssebanakitta, PhD – The Headteacher oversees the overall 
+leadership, academic standards, discipline, infrastructure projects, and the 
+holistic development of students. She emphasizes academic excellence, moral 
+integrity, and character formation while managing day-to-day operations and 
+long-term strategic planning for the school.
+
+DEPUTY HEADS AND SENIOR ADMINISTRATION
+---
+While specific titles and roles can vary, the Deputy Heads at Mengo Senior 
+School support the Headteacher in managing the school's diverse functions:
+
+Administrative Deputies:
+- Balaba Ronald
+- Musoke Paul (Deputy for Finance and School Plant)
+- Najjero Rebecca (Deputy in Charge of Human Resource)
+- Kiggundu Dorothy (Deputy in Charge of Public Relations)
+- Ssentumbwe Pascal (Deputy for Welfare and Director ICT)
+- Ssekayala Suleman (Deputy for Quality Assurance and Programs)
+- Bua Glorious (Deputy for Chaplaincy)
+- Sserunjabwa Richard (Deputy for Co-Curricular Activities, General Duties, and DIT)
+- Lubuulwa Henry (Director of Studies)
+- Galiwango Nakimuli Joeliah (Deputy in Charge of Academics)
+
+Deans and Academic Officers:
+- Ssetuba William (Dean for Career Guidance)
+- Tamale Mary (Dean Quality Assurance)
+- Ssenoga Douglas (Assistant Dean of Careers Development)
+- MugANgA Henry (Head of Counselling)
+- Ann Wandyaka (Dean for Lower School)
+- Geofrey Kigozi (Dean for Middle School)
+- Mpamire Arthur (Dean for Upper School)
+- Lule Emmanuel Patrick (Dean for DIT Skilling School)
+- Kafuma James (Assistant Dean for DIT Skilling School)
+- Walugemebe Christopher (Year Head S3)
+
+Their roles encompass supervising teachers, curriculum implementation, pastoral 
+care, guidance services, and maintaining alignment with both Church of Uganda 
+and government educational standards.
+
+MENGO HUB SYSTEM - TECHNICAL SETUP
+================================================================================
+
+CURRENT CONFIGURATION
+---
+- Flask Backend with SocketIO for real-time communication
+- PostgreSQL Database (primary)
+- GPT4All and Local AI Models for offline functionality
+- N8N Workflows for automation
+- Frontend with interactive dashboards for different roles
+
+SUPPORTED ROLES IN DASHBOARDS
+---
+1. Head Teacher Dashboard
+2. Deputy Head Dashboards
+3. Dean Dashboards
+4. Teacher Dashboard
+5. Student Dashboard
+6. Admin Dashboard
+
+KEY REQUIREMENTS MET
+================================================================================
+
+✓ User Support: System capable of supporting 9,000+ simultaneous users
+✓ Logging: Full audit logging for 9,000+ concurrent users
+✓ Local AI: GPT4All and Mistral models available for offline use
+✓ Cloud AI Integration: Support for Hugging Face, Anthropic, Gemini, and other 
+  free models as fallbacks
+✓ Environment-based Configuration: Using .env files for secure credentials
+✓ Database: PostgreSQL integration for scalability
+
+PLANNED FEATURES & RECOMMENDATIONS
+================================================================================
+
+Audio & Learning:
+- Music overlays (nature sounds, rain, etc.)
+- AI-recommended frequencies based on performance
+- Playlists of multiple beats
+- Virtual learning environments
+
+Admin Panel Features:
+- Badge and Certificate Management system with emoji/emote support
+- Document Management (PDF, Word, Text files for class notes)
+- Space Audit and Monitoring (max 1GB system size constraint)
+- Standard Paper Setting Elements (with upload feature)
+- Paper setting templates (standard or custom)
+
+Mobile & Chat Features:
+- Mobile app with audio playback capability
+- Group and Individual Chat between students
+- Admin toggle control for features (with "feature disabled" messaging)
+- Offline sync capability
+- Text scanner (basic and premium)
+
+Assessment & Marking:
+- Teacher dashboard with paper marking interface
+- Student paper setup interface
+- Analysis of teacher marking style
+- Automated paper grading capabilities
+
+Content Management:
+- Video uploads for learning
+- Word document uploads with images
+- Text file support for notes
+- Past papers repository
+
+Payment & Premium Features:
+- Mobile payment integration (MTN, Airtel real integration)
+- Premium tier: $10 full access
+- Basic tier: $5 partial access
+- Payment validation and secure processing
+
+Security & Compliance:
+- Super Admin Certificate system for secure access
+- Password validation using integrated password generator
+- All passwords hashed and stored securely
+- Super Admin credential tagging with tokens
+- Permanent Admin Certificate (A000) with exclusive super admin access
+- Audit logging for all admin actions
+
+N8N WORKFLOW INTEGRATION
+================================================================================
+- N8N workflows configured with trigger times during the week
+- Python script execution capability within N8N
+- Automation of routine tasks
+- Background processing with foreground availability for research tasks
+- Model allocation with specific timeframes for efficiency
+
+3D VISUALIZATIONS
+================================================================================
+- Sample 3D diagrams included
+- Extensible architecture for adding custom diagrams
+- Interactive visualization elements
+
+NOTES ON AI & MODEL USAGE
+================================================================================
+
+Current Strategy (Local + Free Models):
+- Local Models: GPT4All (Llama, Mistral) for private device-based analysis
+- Cloud Models: Free options (Hugging Face, Anthropic, Gemini)
+- Fallback System: If one model/service is limited or blocked, system 
+  automatically switches to alternative
+- Workflow: Cloud models perform analysis → summary generated → local model 
+  analyzes summary → provides insights
+
+Future Plan:
+Once the system generates revenue, integration with paid premium AI services 
+and more advanced models will be implemented.
+
+COPYRIGHT & LICENSE
+================================================================================
+© Mengo-Hub All rights reserved
+Copyright to: NEWTON PAUL (Author and Creator)
+
+For Production:
+- Author: NEWTON PAUL
+- Co-Author: GitHub Copilot CLI
+- System Owner: Mengo Senior School
+- Extended License: Schools and institutions like Macos
+
+System Permissions: Use only with explicit institutional authorization
+Developer Notes: See LICENSE file for full terms and conditions
+
+SUPER ADMIN CREDENTIALS
+================================================================================
+Super Admin User: A000
+- Exclusive access to super admin panel
+- Permanent Admin Certificate required
+- Token-based authentication
+- Environment variable-based credentials
+- Full audit trail of all admin actions
+- Access control for viewing hashed passwords (super admin only)
+
+PACKAGE UPDATES & DEPRECATIONS
+================================================================================
+✓ Updated: sklearn → scikit-learn (to address deprecation)
+✓ Flask-SocketIO: async_mode updated to 'threading' (from 'eventlet')
+✓ Python 3.13 compatible
+
+GETTING STARTED
+================================================================================
+1. Configure .env file with appropriate credentials
+2. Run PostgreSQL database initialization
+3. Install Python dependencies: pip install -r requirements.txt
+4. Configure N8N workflows as needed
+5. Start Flask application: python flask_app.py
+6. Access system dashboards based on assigned role
+
+TECHNICAL SUPPORT NOTES
+================================================================================
+- System uses environment files for sensitive data (never commit credentials)
+- All passwords validated through integrated security module
+- Real-time notifications via SocketIO with WebSocket support
+- Automatic model fallback on API limits or service unavailability
+- Space monitoring ensures system stays within 1GB constraint
+
+================================================================================
+Last Updated: 2026-05-12
+System Version: Mengo-Hub v1.0
+================================================================================

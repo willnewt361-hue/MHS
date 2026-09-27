@@ -1,0 +1,77 @@
+btw ADD THIS CONTENT IN SYSTEM RESPECTIVELY ON a section nAMED about MSS in everyones dASHOard. (Mengo Senior School, founded in 1895, is Uganda's oldest secondary school, guided by the core values of Fearing God, respecting persons and property, and integrity, with the mission to provide quality, holistic education that prepares students for service in church, state, and society.
+Core Values
+Mengo Senior School emphasizes three foundational principles:
+Fearing God – Inspiring students to live spiritually disciplined and morally upright lives 
+2
+.
+Respect for Persons and Property – Encouraging students to value themselves, others, and communal assets 
+2
+.
+Integrity – Promoting honesty, accountability, and ethical conduct in all actions 
+2
+.
+
+
+2 Sources
+These values are deeply embedded in the school’s culture and reflected in its motto and daily practices, shaping the character of its students, known as Mengonians.
+Mission and Aim
+The mission of Mengo Senior School is: to provide quality education through practical skills, teamwork, self-reliance, and nurturing God-fearing individuals
+mengoss.sc.ug
+ . This mission ensures a balance between academic excellence and moral development. The overarching aim of the school is to produce competent human resources capable of serving the Church, state, and global community
+mengoss.sc.ug
+ . The school targets holistic development by integrating academic subjects, vocational training, technical education, and extracurricular activities to prepare students for real-world challenges 
+Schoolnet Uganda Portal
+.
+Brief History
+Foundation (1895): The school was established by the Church Missionary Society (CMS) as an elementary mixed school called Kayanja. Miss Chadwick, a missionary, began by teaching reading, writing, and prayers to local youth, mainly children of missionaries' houseboys 
+3
+.
+Early Development: As enrollment grew, students were housed temporarily on Namirembe Hill, graciously provided by Sir Apollo Kaggwa, the Katikkiro of Buganda. The potential of formal education was recognized as a way to prepare youth for both secular and religious leadership 
+2
+.
+Establishment of Mengo High School (1904-1905): Formal structures comprising classrooms and dormitories were built. The school was officially named Mengo High School to serve as a boarding institution for sons of chiefs and future leaders 
+3
+.
+Expansion and Modernization: Due to increasing demand, the school expanded through the early 20th century, separating junior and senior sections and evolving into a comprehensive mixed day school offering general academics, technical, vocational, and business subjects 
+2
+.) dont forget to ADD DashboARDS OF DIFFERENT ROLES IE HEadteACHER, Deputy headteACHERS AND OTHERs(iF ANY){
+{Head Teacher
+Dr. Nantagya Grace Ssebanakitta, PhD – The Headteacher oversees the overall leadership, academic standards, discipline, infrastructure projects, and the holistic development of students. She emphasizes academic excellence, moral integrity, and character formation while managing day-to-day operations and long-term strategic planning for the school ( 
+4
+).
+
+Deputy Heads and Senior Administration
+While specific titles and roles can vary, the Deputy Heads at Mengo Senior School support the Headteacher in managing the school’s diverse functions:
+They typically oversee academic departments, student welfare, discipline, co-curricular activities, and operational administration ( 
+1
+).
+Deputies involved in administration includes individuals such as Ssetuba William(not deputy but deAN for cAREERY GUIDance), Tamale Mary(dean quALITY assuraNCE), Ssenoga Douglas(not A DEPUTY BUT ASSIstANT DEAN of Careers development in sCHOOL),MugANgA HENRY(HEad of counselling)   Balaba Ronald, Galiwango Nakimuli Joeliah(DEPUTY IN CHarge of ACademicS), Musoke Paul(Deputy for Finace and school plant), Najjero Rebecca(DePUTY IN CHARGe of humAN ReSOURCE IN MEngo SS), Kiggundu Dorothy(DEPUTY IN CHarge of Public Relations of sCHOOL), Ssentumbwe Pascal(Deputy for welfare and director ICT), Ssekayala Suleman(Deputy for quality assurance and programs), Bua Glorious(Deputy for Chaplaincy), and Sserunjabwa Richard(Deputy for Co-cirricular activities, general duties and DIT), Lubuulwa Henry(Director of Studies),Ann Wandyaka(Not Deputy but Dean for Lower school), Geofrey Kigozi(Not Deputy but Dean for middle school), Mpamire Arthur(Not Deputy but Dean for Upper school),Lule Emmanuel PATRICK(Not Deputy but Dean for DIT skilling school), KAFUMa jAMES(Not Deputy but AssitANT Dean for DIT skilling school), WaLugemebe Christopher- (not deputy but YEar heAD S3)   among others ( 
+2
+).
+Their roles encompass supervising teachers, curriculum implementation, pastoral care, guidance services, and maintaining alignment with both Church of Uganda and government educational standards.
+}
+
+add this also (
+- [ ] Add music overlays (nature sounds, rain, etc.). please enable virtual environments for running stuff. i hope system is capable of allowing 9k users simultaneously and without giving server errors. please enable system be able to log over 9k users or exactly 9k users.
+- [ ] Implement AI-recommended frequencies based on performance. i would like to add this feature(user can pay for himself the ai to use or use {i reccommend}local ai of system plus get the model on their pc i will supply to people for offline use as well as if one does not have access to any cloud ai.)
+- [ ] Create playlists of multiple beats, add a part on admin panel for adding badges n certificates plus the level when to achieve them and their emoji/emote that is unique. also allow admins add notes teachers give in either pdf, or word form and text. (i will often use word coz i will add images and other stuff to make the notes attractive to read and easy to understand), also add audits for space and i want be detailed on what is taking space most part from system files but i dont want system to exceed 1gb space. 
+- [ ] Add visualization (waveforms), i want to add elements of construct and standard paper setting(please add an upload feature and a directory where i can add the word files or text file having standard procedure/elements of construct for papers.). When setting a paper, user can choose format of setting ie eihter the standard way or a custom way using random topics or topics user wants. Papers should be set based on the elements of construct{standard procedure of setting papers} and using notes offered at that level, lets create a file that contains majorly routes the AI(local or cloud) uses to get required and then acts accordingly. 
+- [ ] Mobile app audio playback, please add a feature of group chat and individual chat between students themselves as a fetaure and admin can be able to toggle it on or off at will.(if any feature is toggled off, it should show feature is disabled at this time or for a certain time frame)
+- [ ] Offline sync capability, dont forget the text scanner for both basic and premium features . btw i will upload past papers as word documents and all other files.  btw i hope the feature of marking papers and doing papers on teacher dsashboard is still there so as to understand teacher marking style. 
+)
+btw besides notes, i will also add and upload videos for learning.
+ btw lets create an app for the system also with excellent and unique features. i hope the payment features are the real ones for mtn and airtel. plus the premium features are $10 and if one pays half the cost, they get access to basic system and if they finish the amount, they get access to the premium features
+btw instructions u gave are for downloading but i already have the Llama and minstral Q_K_S and Q_K_M. how can i use them as my local models for systemcoz i have them in gptall and i can locate them in the models folder.
+python -c "from gpt4all import GPT4All; model = GPT4All('Llama-3.2-3B-Instruct-Q4_0.gguf'); print('✅ Model downloaded!')"
+.. bro as per now lets use gpt4all but well switch to ollama later and i will reccommend that to students and teachers, well majorly use the cloud ai's for major stuff in system and users will chat with their local model and others privately on their devices. the cloud models will do the serious stuff that u know and lets find a way to alternate between the models incase one is limited and blocked at that instance,other is used then. i think we use hugging face, aNTHROPIC.., gemini and other free models plus local model aS LAST REFERENCE.. the cloud models will do their job, and at end of analysing their work, they maKE A SUMMARY OF WHAt they got, paatern got AND overall briefed info. , the local model can then Analyse AND understAnd the SUMMARY aND acts accordingly to info it obtianed AND FURTHER ANalyses. due to limits , the models should be ALLOCated A SPECIFIC TIMEFRame for doing its activities but remaining useful to system despite aNYTHING. .
+(lets calculATe how long the limit taKES TO REach AND ALLOCAte specific ACTIVITIES TO DIFF models AND be efficient AT WORK, mAKE THEM work in bACKGROUND USUAlly but cAN BE ON fOREGROUND FOR THE REEarch stuff{i wILL MOST TIMES DISable this feature coz of limits}) LETS USE All the free AI's o cloud.
+
+AS PER NOW LETS USE BOTH THE LOCal AND FREE MODELS, WHEN I STart eARNING FROM SYSTEM, I WILL IMPROVE IT ONCE AND FOR ALL TO AI THAT ARE PAID AND ARE efficient AND EFFECTIVE.
+
+btw , i have n8n on my pc but it can run scripts ie python in it. you'll help fix that and we connect it to my system, integrate the workflows to system itself and run them there.
+btw, add a part on every page.(&copy Mengo-Hub All. rights reserverd [Copyright to NEWTON PAUL{Author and Creator}])  create a license file that talks about system, plus for production, author is me, co-author is you, permissions of system, system is for school Mengo SS and others like Macos am yet to convince to adopt system. 
+i would like to add demos for everything in system that i can adjust, the n8n workflows, two sample 3d diagrams, beats, and all other features .lets finish system once and for all, but please leave labels so that if i want to add features, i can add them in the codes and on the super admin page . plus i have my python file for password generATION THAt are secure (can we add it to system so that all password are vaLIDATED and secure, plus stored on system and only super admin can see them and he requires a permanent admin certificate to access the passwords of people before they are haShed)
+btw dont forget to add all recommendATIONS U GAVE about the feaTURES IN THE .MD FILES IE n8n workflows(i love ALL THE WORFLOWS U SAid and pleaSE SET FOR THEM a trigger time in the week), the 3d diAGRams(pleASE add some diAGRams AND I WILL Also aDD MINE after), AND THE OTHERS also.  btw create the permanent Admin certificaTE for super user aDMIN  A000 AND HE IS THE ONLY ONE TO HAve the super ADMIN credentIaLS Part from when he creATES a super aDMIN useR HIMSELF and to ACCESS THE SUPER admin paNEL(ONE SHOULD Have the super ADMIN CERTIFICate AND PLease mAKE SURE IT WORKS WELL WITHOUT DISTURBING LIKE Last term bug of fAILING TO access ADMIN dsashboard yet they hAVE THE CERTIFICate.) 
+btw LETS STart USING TRUE credentIaLS IE THE environment FILE and others. lASTLY LETS SWitch to postgresql completely. Admin A000 should be tagged wITH THE SUPER admin credentIaLS ie token AND OTHER.
+bro, package sklearn is deprecated, we r advised to use scikit-learn. lets adjust bro. how can i do that and adjust m code.
+

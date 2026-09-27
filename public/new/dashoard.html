@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengo-Hub Dashboard</title>
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-page">
+    <header class="dashboard-header">
+        <div class="brand-group">
+            <div class="hero-logo-circle small">M</div>
+            <div>
+                <h1>Mengo-Hub Dashboard</h1>
+                <p id="dashboard-role-tag">Portal open</p>
+            </div>
+        </div>
+        <div class="dashboard-header-actions">
+            <span id="dashboard-last-login"></span>
+            <a class="link-button" href="home.html">Home</a>
+        </div>
+    </header>
+
+    <main class="dashboard-shell">
+        <aside class="dashboard-sidebar">
+            <div class="profile-card">
+                <div class="profile-avatar" id="user-photo">?</div>
+                <h2 id="user-fullname">Mengo User</h2>
+                <p id="user-role">Role: Student</p>
+                <p id="user-id">ID: ---</p>
+                <p id="user-class">Class: ---</p>
+            </div>
+            <nav class="dashboard-menu" id="dashboard-menu">
+                <button data-view="home" class="active">Home</button>
+                <button data-view="consult" onclick="window.location.href='consult.html'" >Consult</button>
+                <button data-view="assignments">Assignments</button>
+                <button data-view="updates">Updates & Timetable</button>
+                <button data-view="subjects">Subjects</button>
+                <button data-view="general">General</button>
+                <!-- Teacher-specific menu items -->
+                <button data-view="teacher-assignments" class="teacher-only hidden">D.Assignments</button>
+                <button data-view="pending-assignments" class="teacher-only hidden">Pending Assignments</button>
+                <button data-view="teacher-consults" class="teacher-only hidden">Consults</button>
+                <button data-view="timetable" class="teacher-only hidden">Timetable</button>
+                <button data-view="school-updates" class="teacher-only hidden">School Updates</button>
+                <button data-view="map" class="teacher-only hidden">Map</button>
+                <button data-view="map">Map</button>
+            </nav>
+        </aside>
+
+        <section class="dashboard-content">
+            <div id="notification-banner" class="notification-banner hidden"></div>
+
+            <section id="view-home" class="dashboard-view">
+                <div class="dashboard-welcome">
+                    <h2 id="dashboard-welcome">Welcome</h2>
+                    <p id="dashboard-summary">Your quick student or teacher dashboard appears here.</p>
+                </div>
+                <div class="dashboard-grid">
+                    <article class="dashboard-card">
+                        <h3>Consult</h3>
+                        <p>Open the teacher consult browser and message a teacher.</p>
+                        <button class="action-button" data-view-target="consult" onclick="window.location.href='consult.html'" >Open Consult</button>
+                    </article>
+                    <article class="dashboard-card">
+                        <h3>Assignments</h3>
+                        <p>View class assignments, upload submissions, or see pending work.</p>
+                        <button class="action-button" data-view-target="assignments">View Assignment</button>
+                    </article>
+                    <article class="dashboard-card">
+                        <h3>Updates</h3>
+                        <p>Read leader messages, school announcements and timetable updates.</p>
+                        <button class="action-button" data-view-target="updates">Open Updates</button>
+                    </article>
+                    <article class="dashboard-card">
+                        <h3>Subjects</h3>
+                        <p>See the subjects for your class and open topic resources.</p>
+                        <button class="action-button" data-view-target="subjects" onclick="window.location.href='subject.html'" >Open Subjects</button>
+                    </article>
+                </div>
+            </section>
+
+            <section id="view-consult" class="dashboard-view hidden">
+                <div class="panel-header">
+                    <div>
+                        <h2>Consult</h2>
+                        <p>Open the teachers directory and start a consult session in a new tab.</p>
+                    </div>
+                    <button class="action-button" id="open-consult-page">Open teacher consult page</button>
+                </div>
+            </section>
+
+            <section id="view-assignments" class="dashboard-view hidden">
+                <div class="panel-header">
+                    <h2>Assignments</h2>
+                    <p>Assignments are grouped by class, stream and teacher.</p>
+                </div>
+                <div id="assignments-list" class="dashboard-list"></div>
+            </section>
+
+            <section id="view-updates" class="dashboard-view hidden">
+                <div class="panel-header">
+                    <div>
+                        <h2>Updates & Timetable</h2>
+                        <p>Switch between current updates and your class timetable.</p>
+                    </div>
+                    <div class="small-button-group">
+                        <button id="updates-tab" class="tab-button active">Updates</button>
+                        <button id="timetable-tab" class="tab-button">Timetable</button>
+                    </div>
+                </div>
+                <div id="updates-section" class="updates-panel"></div>
+                <div id="timetable-section" class="timetable-panel hidden"></div>
+            </section>
+
+            <section id="view-subjects" class="dashboard-view hidden">
+                <div class="panel-header">
+                    <div>
+                        <h2>Subjects</h2>
+                        <p>Browse subjects for your level and open resources.</p>
+                    </div>
+                </div>
+                <div id="subjects-list" class="dashboard-grid"></div>
+            </section>
+
+            <section id="view-general" class="dashboard-view hidden">
+                <div class="panel-header">
+                    <h2>General</h2>
+                    <p>School features, security guidance and executive access notes.</p>
+                </div>
+                <div class="general-copy">
+                    <p>This dashboard supports role-based content, student and teacher access, assignment tracking, consults and timetable planning.</p>
+                    <p>For real deployment, always use HTTPS, server-side session management, strong password hashing and certificate validation. Browser cookies are only part of a secure portal.</p>
+                    <p>Executives can use a protected certificate token to access administrative recovery tools.</p>
+                </div>
+            </section>
+
+            <!-- Teacher-specific views -->
+            <section id="view-teacher-assignments" class="dashboard-view hidden teacher-only">
+                <div class="panel-header">
+                    <h2>D.Assignments</h2>
+                    <p>Assignments submitted by learners for digital marking.</p>
+                </div>
+                <div id="teacher-assignments-list" class="dashboard-list"></div>
+            </section>
+
+            <section id="view-pending-assignments" class="dashboard-view hidden teacher-only">
+                <div class="panel-header">
+                    <h2>Pending Assignments</h2>
+                    <p>Assignments you have posted and their status.</p>
+                </div>
+                <div id="pending-assignments-list" class="dashboard-list"></div>
+                <button class="action-button" id="post-assignment">Post New Assignment</button>
+            </section>
+
+            <section id="view-teacher-consults" class="dashboard-view hidden teacher-only">
+                <div class="panel-header">
+                    <h2>Consults</h2>
+                    <p>Questions and consultations from students.</p>
+                </div>
+                <div id="teacher-consults-list" class="dashboard-list"></div>
+            </section>
+
+            <section id="view-timetable" class="dashboard-view hidden teacher-only">
+                <div class="panel-header">
+                    <h2>Timetable</h2>
+                    <p>Your teaching schedule by class and stream.</p>
+                </div>
+                <div id="teacher-timetable" class="timetable-panel"></div>
+            </section>
+
+            <section id="view-school-updates" class="dashboard-view hidden teacher-only">
+                <div class="panel-header">
+                    <h2>School Updates</h2>
+                    <p>School-wide announcements and updates.</p>
+                </div>
+                <div id="school-updates-list" class="updates-panel"></div>
+            </section>
+
+            <section id="view-map" class="dashboard-view hidden teacher-only">
+                <div class="panel-header">
+                    <h2>Map</h2>
+                    <p>Interactive map of Mengo SS with room locations.</p>
+                </div>
+                <div class="map-placeholder">
+                    <p>Map of Mengo Secondary School</p>
+                    <p>Click on buildings to see room details.</p>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    //script src="script.js"></script>
+</body>
+</html>
+
