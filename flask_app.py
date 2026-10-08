@@ -591,16 +591,15 @@ def login():
             if user:
                 table = 'students'
                 
-        print(
-            f"[LOGIN DEBUG] User FOUND: "
-            f"id={user['id']}, "
-            f"username={user['username']}, "
-            f"role={role}"
-        )
-
-        #if not user:
-        #    return jsonify({'success': False, 'message': 'Invalid username or password'}), 401
-        #return handle_login_result(db, user, table, role, username, password, now)
+        if user:
+            print(
+                f"[LOGIN DEBUG] User FOUND: "
+                f"id={user['id']}, "
+                f"username={user['username']}, "
+                f"role={role}"
+            )
+        else:
+            print(f"[LOGIN DEBUG] User NOT FOUND: username={username}, role={role}")
         
         if not user:
             print(f"[LOGIN DEBUG] User NOT FOUND: username={username}, role={role}")
@@ -1052,6 +1051,26 @@ def get_logs():
 @app.route('/')
 def root():
     return send_from_directory('public', 'index.html')
+
+@app.route('/features')
+def features():
+    return send_from_directory('public', 'features-modern.html')
+
+@app.route('/pricing')
+def pricing():
+    return send_from_directory('public', 'pricing-modern.html')
+
+@app.route('/faq')
+def faq():
+    return send_from_directory('public', 'faq-modern.html')
+
+@app.route('/dashboard-modern')
+def dashboard_modern():
+    return send_from_directory('public', 'dashboard-modern.html')
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('public', 'favicon.svg')
 
 @app.route('/<path:filename>')
 def serve_static(filename):
